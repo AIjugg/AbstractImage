@@ -30,7 +30,7 @@ class charDraw(abstractDraw):
     txt = '彩色文字'
 
     def draw(self, output):
-        font_size = 15
+        font_size = 10
         font = ImageFont.truetype('simsun.ttc',font_size)
         image = Image.new('RGB', (self.img.shape[1], self.img.shape[0]), (20,20,20))
         d = ImageDraw.Draw(image)
@@ -59,7 +59,7 @@ class circleDraw(abstractDraw):
         self.get_image(img_path)
         self.resize((int(self.img.shape[1] / 4), int(self.img.shape[0] / 4)))
         self.get_gray_img()
-        self.bg_shape = [self.img.shape[1] * 8, self.img.shape[0] * 8]
+        self.bg_shape = [self.img.shape[1] * 9, self.img.shape[0] * 9]
     
     def reverse_transfer(self, ratio = 120):
         reserve_img = cv2.bitwise_not(self.img)
